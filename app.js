@@ -44,7 +44,7 @@ app.get('/', function(request, response) {
 app.get('/:id', function(request, response) {
   var record = findById(data, request.params.id);
   if (!record) {
-    response.status = 404;
+    response.status(404);
     response.json({error: {message: "No record found!"}})
   }
 
